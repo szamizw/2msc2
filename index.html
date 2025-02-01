@@ -58,13 +58,21 @@
             const now = new Date();
             const diff = now - startDate; // Różnica w milisekundach
             
-            // Oblicz miesiące, dni, godziny
+            // Oblicz miesiące, dni, godziny, minuty, sekundy
             const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44)); // Średnia długość miesiąca
-            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24)); // Całkowita liczba dni
+            const hours = Math.floor(diff / (1000 * 60 * 60)); // Całkowita liczba godzin
+            const minutes = Math.floor(diff / (1000 * 60)); // Całkowita liczba minut
+            const seconds = Math.floor(diff / 1000); // Całkowita liczba sekund
 
             // Wyświetl wynik
-            document.getElementById("countup-timer").innerHTML = `Jesteśmy razem od: <br> ${months} miesięcy, ${days} dni i ${hours} godzin ❤️`;
+            document.getElementById("countup-timer").innerHTML = 
+                `Jesteśmy razem od: <br> 
+                ${months} miesięcy <br>
+                ${days} dni <br>
+                ${hours} godzin <br>
+                ${minutes} minut <br>
+                ${seconds} sekund 💜`;
         }
 
         setInterval(updateTimer, 1000); // Aktualizacja co sekundę
