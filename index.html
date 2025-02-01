@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dwa miesiące z Tobą, Weronika 💜</title>
+    <title>Dwa miesiące z Tobą, Weroniko 💜</title>
     <style>
         body { 
             font-family: Arial, sans-serif; 
@@ -12,15 +12,31 @@
             color: white; 
             margin: 0; 
             padding: 0;
+            position: relative;
+        }
+        .background-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+            opacity: 0.2;
+            z-index: 0;
         }
         h1 { 
             color: #f4c2c2; 
             margin-top: 50px;
+            position: relative;
+            z-index: 1;
         }
         .container { 
             max-width: 800px; 
             margin: 0 auto; 
             padding: 20px;
+            position: relative;
+            z-index: 1;
         }
         .heart { 
             font-size: 80px; 
@@ -43,8 +59,10 @@
     </style>
 </head>
 <body>
+    <div class="background-text">Kocham Cię Werka ❤️</div>
+
     <div class="container">
-        <h1>Dwa miesiące z Tobą, Weronika 💜</h1>
+        <h1>Dwa miesiące z Tobą, Weroniko 💜</h1>
         <p>To już dwa miesiące, odkąd jesteś w moim życiu i każdego dnia sprawiasz, że jest piękniejsze.</p>
         <p class="heart">💜</p>
         <p>Dziękuję za każdy uśmiech, rozmowę i wsparcie. Nie mogę się doczekać kolejnych chwil razem!</p>
