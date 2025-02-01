@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dwa miesiące z Tobą ❤️</title>
+    <title>Dwa miesiące z Tobą, Weronika 💜</title>
     <style>
         body { 
             font-family: Arial, sans-serif; 
@@ -31,28 +31,44 @@
             0%, 100% { transform: scale(1); } 
             50% { transform: scale(1.2); } 
         }
-        .btn { 
-            display: inline-block; 
-            margin-top: 20px; 
-            padding: 10px 20px; 
-            background: #d291ff; 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 5px; 
+        .timer {
+            font-size: 24px;
             font-weight: bold;
-        }
-        .btn:hover { 
-            background: #b06ab3; 
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Dwa miesiące z Tobą, [Jej imię] 💜</h1>
+        <h1>Dwa miesiące z Tobą, Weronika 💜</h1>
         <p>To już dwa miesiące, odkąd jesteś w moim życiu i każdego dnia sprawiasz, że jest piękniejsze.</p>
         <p class="heart">💜</p>
         <p>Dziękuję za każdy uśmiech, rozmowę i wsparcie. Nie mogę się doczekać kolejnych chwil razem!</p>
-        <p><a href="https://youtu.be/twoja-piosenka" target="_blank" class="btn">Nasza piosenka 🎶</a></p>
+
+        <div class="timer" id="countup-timer">Ładowanie...</div>
     </div>
+
+    <script>
+        function updateTimer() {
+            const startDate = new Date("2024-12-01T00:00:00"); // Data rozpoczęcia
+            const now = new Date();
+            const diff = now - startDate; // Różnica w milisekundach
+            
+            // Oblicz miesiące, dni, godziny
+            const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44)); // Średnia długość miesiąca
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            // Wyświetl wynik
+            document.getElementById("countup-timer").innerHTML = `Jesteśmy razem od: <br> ${months} miesięcy, ${days} dni i ${hours} godzin ❤️`;
+        }
+
+        setInterval(updateTimer, 1000); // Aktualizacja co sekundę
+        updateTimer(); // Pierwsze wywołanie od razu
+    </script>
 </body>
 </html>
